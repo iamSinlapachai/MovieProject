@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMovie));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -63,6 +64,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btSearchMovie = new System.Windows.Forms.Button();
             this.tbSearchMovie = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMovieDirectorImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMovieImage)).BeginInit();
@@ -133,6 +135,7 @@
             this.btMovieDirectorImage.TabIndex = 24;
             this.btMovieDirectorImage.Text = "...";
             this.btMovieDirectorImage.UseVisualStyleBackColor = true;
+            this.btMovieDirectorImage.Click += new System.EventHandler(this.btMovieDirectorImage_Click);
             // 
             // btMovieImage
             // 
@@ -143,6 +146,7 @@
             this.btMovieImage.TabIndex = 23;
             this.btMovieImage.Text = "...";
             this.btMovieImage.UseVisualStyleBackColor = true;
+            this.btMovieImage.Click += new System.EventHandler(this.btMovieImage_Click);
             // 
             // pcbMovieDirectorImage
             // 
@@ -353,6 +357,7 @@
             this.btResetMovie.Text = "ยกเลิก";
             this.btResetMovie.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btResetMovie.UseVisualStyleBackColor = true;
+            this.btResetMovie.Click += new System.EventHandler(this.btResetMovie_Click);
             // 
             // lvShowAllMovie
             // 
@@ -374,6 +379,7 @@
             this.btExit.Text = "Exit";
             this.btExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btExit.UseVisualStyleBackColor = true;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // btDeleteMovie
             // 
@@ -413,6 +419,7 @@
             this.btSaveMovie.Text = "บันทึกเพิ่มข้อมูล";
             this.btSaveMovie.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btSaveMovie.UseVisualStyleBackColor = true;
+            this.btSaveMovie.Click += new System.EventHandler(this.btSaveMovie_Click);
             // 
             // lvShowSearchMovie
             // 
@@ -470,6 +477,11 @@
             this.tbSearchMovie.Size = new System.Drawing.Size(104, 20);
             this.tbSearchMovie.TabIndex = 21;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // FrmMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -490,6 +502,7 @@
             this.Name = "FrmMovie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "โปรแกรมจัดการข้อมูลภาพยนต์ ";
+            this.Load += new System.EventHandler(this.FrmMovie_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMovieDirectorImage)).EndInit();
@@ -538,6 +551,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btSearchMovie;
         private System.Windows.Forms.TextBox tbSearchMovie;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 

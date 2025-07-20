@@ -16,7 +16,7 @@ namespace MovieProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMovie());
+            Application.Run(new FrmMovie ());
         }
     }
 }

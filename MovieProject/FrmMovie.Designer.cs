@@ -367,6 +367,7 @@
             this.lvShowAllMovie.Size = new System.Drawing.Size(669, 166);
             this.lvShowAllMovie.TabIndex = 50;
             this.lvShowAllMovie.UseCompatibleStateImageBehavior = false;
+            this.lvShowAllMovie.ItemActivate += new System.EventHandler(this.lvShowAllMovie_ItemActivate);
             // 
             // btExit
             // 
@@ -393,6 +394,7 @@
             this.btDeleteMovie.Text = "ลบข้อมูล";
             this.btDeleteMovie.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btDeleteMovie.UseVisualStyleBackColor = true;
+            this.btDeleteMovie.Click += new System.EventHandler(this.btDeleteMovie_Click);
             // 
             // btUpdateMovie
             // 
@@ -406,6 +408,7 @@
             this.btUpdateMovie.Text = "บันทึกแก้ไขข้อมูล";
             this.btUpdateMovie.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btUpdateMovie.UseVisualStyleBackColor = true;
+            this.btUpdateMovie.Click += new System.EventHandler(this.btUpdateMovie_Click);
             // 
             // btSaveMovie
             // 
@@ -430,6 +433,7 @@
             this.lvShowSearchMovie.Size = new System.Drawing.Size(161, 205);
             this.lvShowSearchMovie.TabIndex = 33;
             this.lvShowSearchMovie.UseCompatibleStateImageBehavior = false;
+            this.lvShowSearchMovie.ItemActivate += new System.EventHandler(this.lvShowSearchMovie_ItemActivate);
             // 
             // groupBox1
             // 
@@ -467,6 +471,7 @@
             this.btSearchMovie.TabIndex = 22;
             this.btSearchMovie.Text = "ค้นหา";
             this.btSearchMovie.UseVisualStyleBackColor = true;
+            this.btSearchMovie.Click += new System.EventHandler(this.btSearchMovie_Click);
             // 
             // tbSearchMovie
             // 
@@ -476,6 +481,7 @@
             this.tbSearchMovie.Name = "tbSearchMovie";
             this.tbSearchMovie.Size = new System.Drawing.Size(104, 20);
             this.tbSearchMovie.TabIndex = 21;
+            this.tbSearchMovie.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearchMovie_KeyUp);
             // 
             // contextMenuStrip1
             // 

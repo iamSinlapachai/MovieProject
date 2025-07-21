@@ -88,10 +88,20 @@ namespace MovieProject
                         lvShowSearchMovie.FullRowSelect = true;
                         lvShowSearchMovie.View = View.Details;
 
+                        //ตึ้งค่าการแสดงรูปของ ListView 
+                        if (lvShowAllMovie.SmallImageList == null)
+                        {
+                            lvShowAllMovie.SmallImageList = new ImageList();
+                            lvShowAllMovie.SmallImageList.ImageSize = new Size(50, 50);
+                            lvShowAllMovie.SmallImageList.ColorDepth = ColorDepth.Depth32Bit;
+
+                        }
+                        lvShowAllMovie.SmallImageList.Images.Clear();
+
                         //กำหนดรายละเอียดของ Colum ใน ListView
                         lvShowAllMovie.Columns.Add("รูปภาพยนต์", 120, HorizontalAlignment.Left);
                         lvShowAllMovie.Columns.Add("ชื่อภาพยนต์", 140, HorizontalAlignment.Left);
-                        lvShowAllMovie.Columns.Add("ชื่อผู้กำกับ", 140, HorizontalAlignment.Left);
+                        lvShowAllMovie.Columns.Add("รายละเอียดหนัง", 140, HorizontalAlignment.Left);
                         lvShowAllMovie.Columns.Add("วันที่ฉาย", 120, HorizontalAlignment.Left);
                         lvShowAllMovie.Columns.Add("ประเภทภาพยนต์", 120, HorizontalAlignment.Left);
 
@@ -122,7 +132,7 @@ namespace MovieProject
                             }
 
                             item.SubItems.Add(dataRow["movieName"].ToString());
-                            item.SubItems.Add(dataRow["movieDirectorName"].ToString());
+                            item.SubItems.Add(dataRow["movieDetail"].ToString());
                             item.SubItems.Add(dataRow["movieDate"].ToString());
                             item.SubItems.Add(dataRow["movieType"].ToString());
 
@@ -194,24 +204,17 @@ namespace MovieProject
                 showWarningMessage("โปรดใส่รายละเอียดภาพยนต์");
             }
 
-            else if (!dtpMovieDate.Checked)
+            else if (dtpMovieDate.Value.Date < DateTime.Today)
             {
-
-                showWarningMessage("โปรดใส่วันที่ออกฉาย");
-                DateTime releaseDate = dtpMovieDate.Value;
-                if (releaseDate.Date < DateTime.Today)
-                {
-                    MessageBox.Show("วันที่ออกฉายไม่ควรเป็นอดีต");
-
-                }
-            }
-            else if (nudMovieHour.Value < 0 || nudMovieMinute.Value < 0)
-            {
-                showWarningMessage("โปรดใส่ความยาวของภาพยนต์เป็นตัวเลขที่ไม่ติดลบ");
+                showWarningMessage("วันที่ออกฉายต้องเป็นวันปัจจุบันหรือล่วงหน้า");
             }
             else if (nudMovieHour.Value == 0 && nudMovieMinute.Value == 0)
             {
-                showWarningMessage("โปรดใส่ความยาวของภาพยนต์");
+                showWarningMessage("โปรดใส่ความยาวของภาพยนตร์อย่างน้อย 1 นาที");
+            }
+            else if (nudMovieMinute.Value >= 60)
+            {
+                showWarningMessage("นาทีต้องน้อยกว่า 60 นาที");
             }
 
             // Check if the movie type is selected
